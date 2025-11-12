@@ -1,0 +1,321 @@
+/* Import Font Contoh (Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+/* Variabel Warna */
+:root {
+  --primary-color: #5c4033; /* Cokelat Kopi Tua */
+  --secondary-color: #d2b48c; /* Cokelat Susu */
+  --dark-bg: #2f1a00;
+}
+
+/* Pengaturan Dasar */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth; /* Scroll halus untuk Jump Link */
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: rgba(47, 26, 0, 0.9);
+  border-bottom: 1px solid #444;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar .navbar-logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.navbar .navbar-logo span {
+  color: var(--secondary-color);
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.navbar .nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin-left: 1rem;
+}
+
+#hamburger-menu {
+  display: none; /* Sembunyikan tombol hamburger di desktop */
+}
+
+/* SECTION HOME (HERO) - LATAR BELAKANG COVER */
+.hero-section {
+  /* PENTING: Menggunakan gambar Anda */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("images/gallery-1.jpg");
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Memenuhi tinggi layar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.4rem 7%;
+  padding-top: 5rem;
+}
+
+.hero-content {
+  background-color: transparent;
+  padding: 2rem 4rem;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* Konten Section Umum */
+.content-section {
+  min-height: 100vh;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding: 8rem 7%;
+  position: relative;
+  background-color: #1c0d08;
+  color: white;
+}
+
+.content-section h2 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.grey-bg {
+  background-color: #1c0d08;
+  color: white;
+}
+
+.dark-bg {
+  background-color: var(--dark-bg);
+  color: #1c0d08;
+}
+
+/* Tombol */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background-color: #c3a67c;
+}
+
+/* ... [Setelah styling umum .btn dan .btn:hover] ... */
+
+/* ======================================
+STYLING NAVIGASI SLIDE (prev/next)
+======================================
+*/
+
+/* Styling Umum untuk Tombol Slide (Oval Shape, Bottom Positioning) */
+.slide-btn {
+  position: absolute;
+  bottom: 2rem; /* Jarak dari bawah */
+  z-index: 10;
+
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 400;
+  border-radius: 50px; /* Bentuk Oval */
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.slide-btn:hover {
+  background-color: #795548;
+}
+
+/* Positioning dan Styling Khusus */
+
+/* TOMBOL SLIDE SELANJUTNYA (Kanan Bawah) */
+.next-btn {
+  right: 2rem;
+}
+
+/* TOMBOL SLIDE SEBELUMNYA (Kiri Bawah) */
+.prev-btn {
+  left: 2rem;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.prev-btn:hover {
+  background-color: #c3a67c;
+  color: white;
+}
+
+/* PENYESUAIAN UNTUK SECTION DARK-BG (#contact) */
+#contact .slide-btn {
+  background-color: #d2b48c;
+  color: white;
+}
+
+#contact .slide-btn:hover {
+  background-color: #c3a67c;
+}
+
+/* ... [Sebelum styling Footer dan Media Queries] ... */
+
+/* Styling untuk Tombol Kembali ke Home */
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+
+  /* Menggunakan styling yang mirip dengan .btn agar konsisten */
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primary-color); /* Warna cokelat tua */
+  color: white; /* Teks putih */
+  font-weight: 400;
+  border-radius: 50px;
+  margin-top: 0; /* Memberi jarak dari konten section */
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #795548; /* Warna sedikit lebih terang saat hover */
+}
+
+/* Modifikasi agar tombol back terlihat di section dark-bg (Contact) */
+#contact .back-btn {
+  background-color: #4caf50; /* Contoh warna hijau agar kontras di latar belakang gelap */
+}
+
+#contact .back-btn:hover {
+  background-color: #45a049;
+}
+
+/* Contact Form Styling */
+.contact-form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.contact-form .input-group input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  border: none;
+}
+
+.contact-form textarea {
+  margin-top: 1rem;
+  resize: vertical;
+  min-height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-bg);
+  text-align: center;
+  padding: 1rem;
+  color: white;
+}
+
+/* Media Queries (Responsif - Mirip dengan gaya WPU) */
+/* Tablet */
+@media (max-width: 768px) {
+  #hamburger-menu {
+    display: inline-block; /* Tampilkan tombol hamburger */
+  }
+
+  .navbar .nav-links {
+    position: absolute;
+    top: 100%;
+    right: -100%; /* Sembunyikan menu di luar layar */
+    background-color: var(--dark-bg);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .nav-links.active {
+    right: 0; /* Tampilkan menu saat di-klik */
+  }
+
+  .navbar .nav-links a {
+    color: white;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #61483a;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+  html {
+    font-size: 75%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
